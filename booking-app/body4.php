@@ -84,7 +84,6 @@
 						<?php 
 							$sql_favorite="SELECT * FROM favorites where user_id= ".$row2["user_id"]." AND room_id=".$Room_Id." ";
 							$result_favorite=mysqli_query($conn,$sql_favorite)->fetch_assoc();
-							
 							if ($result_favorite > 0){ ?>
 								<span id="favorite"><i class="fa fa-heart"></i></span>			
 								<?php }else{
@@ -174,7 +173,6 @@
 					<h3>Reviews</h3>
 					<?php
 						$i=0;
-
 						$sql4="SELECT  review_id,user_id,rate,description,date_created FROM reviews WHERE room_id='{$_POST['Room_Id']}'";
 						$result4=mysqli_query($conn,$sql4);
 						if(mysqli_query($conn,$sql4)){
@@ -260,11 +258,9 @@
 						<p><?php echo $row4['description'];?></p>
 					</div>
 					<?php	
-					}
-					
+					}	
 					}
 					?>
-
 				</div>
 				<div id="ratings-review">
 					<h3>Add a Review</h3>
@@ -295,8 +291,6 @@
 			<p>&copy; George Roussos 2018</p>
 		</footer>
 	</div>
-
-
 	<script>
 		$(document).ready(function () {
 			$('#form4').on('submit', function(event){
@@ -336,7 +330,6 @@
 			});
 		});
 	</script>
-
 	<script>
 		$("button").click(function(){
     		$(this).find("i").removeClass("far fa-heart").addClass("fa fa-heart");
@@ -392,14 +385,11 @@
 		    modal.style.display = "block";
 		}
 	} 
-	
-
 	// When the user clicks on <span> (x), close the modal
 	span.onclick = function() {
 	    modal.style.display = "none";
 	    window.location.reload();
 	}
-
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
 	    if (event.target == modal) {
