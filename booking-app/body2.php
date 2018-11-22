@@ -76,7 +76,6 @@
 			}else{
 				echo "Oops";
 			}
-
 				$result=mysqli_query($conn,$sql);
 				if(mysqli_query($conn,$sql)){
 					
@@ -107,7 +106,6 @@
 										<input type="hidden" name="Room_Id" value="<?php echo $row['room_id'];?>">
 										<input type="hidden" name="CheckInDate" value="<?php echo $_POST['from'];?>">
                                         <input type="hidden" name="CheckOutDate" value="<?php echo $_POST['to'];?>">
-
 										<button type="submit" class="btn btn-outline-primary" style="float:right">Go to Room Page</button>
 									</form>
 								<div class="informations">
@@ -139,6 +137,7 @@
 									</div>
 								</div>
 							</article>
+							<div class="spinner"></div>
 							<?php
 								}
 							}
@@ -218,6 +217,7 @@
                     return false;
                 }
 				//console.log(form_data);
+				document.body.className="spinner";
 				$.ajax({
 					url:"fetch_listpage.php",
 					method: "POST",
@@ -226,6 +226,7 @@
 					success:function(d)
 					{
 						//console.log(d);
+						document.body.className="";
 						$('main').html(d);
 					}
 				});
