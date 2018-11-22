@@ -1,0 +1,183 @@
+.dropdown-toggle{
+	background-color:#e9ecef;
+	border-color:#ced4da;
+	color:#6c757d;
+	width:154.53px;
+	height:100%;
+}
+
+.dropdown-toggle:hover{
+	background-color:#dee2e6;
+	border-color:black;
+}
+.dropdown-toggle:active{
+	background-color:#e75625;
+	border-color:black;
+}
+.btn-outline-primary{
+	color:white;
+	background-color:#e75625;
+	border-color:#e75625;
+}
+
+.btn-outline-primary:hover{
+	background-color:#f57d54; 
+	border-color:#f57d54;
+}
+
+
+
+
+.form-control{
+	width: 100%;
+    margin-right: 7px;
+    margin-left: -2px;
+    text-align: center;
+    /* display: flex; */
+    margin-top: 32px;
+    /* justify-content: center; */
+    /* left: 1%; */
+}
+
+
+
+.bootstrap-select{
+	height: 55px;
+}
+
+aside .btn-outline-primary{
+	margin-top: 20px;
+	width: 220px;
+
+}
+
+
+textarea{
+	width:100%;
+	margin-left:10px;
+}
+
+/*@media only screen and (max-width: 654px){
+	form{
+		display:flex;
+		flex-direction:column;
+	}
+}*/
+
+
+@media only screen and (max-width: 654px){
+	#dropdowns{
+		display:flex;
+		flex-direction:column;
+	}
+}
+	
+@media only screen and (max-width: 654px){
+	.form-flex-container{
+		padding: 20px;
+	}
+}
+
+@media only screen and (max-width: 654px){
+	.btn-outline-primary{
+	    margin-bottom: 10px;
+	}
+}
+
+
+
+/*.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}*/
+
+.dropdown-menu.show{
+	text-align:center;
+}
+
+
+
+
+.modal-content {
+    width: 40%;
+	border-radius:44px;
+}
+
+
+
+.modal-header {
+    background-color: #e75625;
+	border-radius:40px;
+	border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+.modal-body p{
+	font-size: 22px;
+    text-align: center;
+}
+
+
+
+@media only screen and (max-width: 414px){
+	.modal-content {
+		width: 70%;
+		border-radius:44px;
+		height:auto;
+	}
+}
+
+
+
+
+a .button{
+	outline:none;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
