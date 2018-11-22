@@ -27,8 +27,7 @@
 							if (mysqli_num_rows($result)==0){
 								echo "There are no bookings yet!!";
 							}elseif (mysqli_num_rows($result) > 0){
-								while($row = mysqli_fetch_assoc($result)){
-									
+								while($row = mysqli_fetch_assoc($result)){	
 									$sql2 = "SELECT room_id,name,city,area,photo,room_type,count_of_guests,price,short_description FROM room WHERE room_id='{$row['room_id']}'";
 							$result2=mysqli_query($conn,$sql2);
 							if(mysqli_query($conn,$sql2)){
@@ -117,7 +116,6 @@
 									$sql4 = "SELECT name FROM room WHERE room_id='{$row3['room_id']}'";
 							$result4=mysqli_query($conn,$sql4);
 							if(mysqli_query($conn,$sql4)){
-								
 							}else{
 								echo '<div class="alert alert-success"
 									role="alert">Error:'.$sql4."<br>".mysqli_error($conn).'</div>';
@@ -153,7 +151,6 @@
 								echo "There are no reviews yet!!";
 							}elseif (mysqli_num_rows($result5) > 0){
 								while($row5 = mysqli_fetch_assoc($result5)){
-
 									$sql6 = "SELECT name FROM room WHERE room_id='{$row5['room_id']}'";
 							$result6=mysqli_query($conn,$sql6);
 							if(mysqli_query($conn,$sql6)){
