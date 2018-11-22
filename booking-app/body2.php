@@ -133,7 +133,6 @@
 											?>
 											<p>Type of Room: <?php echo $roomtype;?> Room</p>
 										</div>
-										 
 									</div>
 								</div>
 							</article>
