@@ -84,7 +84,6 @@ if (!$conn) {
 				}
 		?>			
 					<p>Search Results</p>
-					<div class="spinner"></div>
 						<?php 
 							if ($result_bookingdate > 0){
 								echo "You have already book for this date";	
