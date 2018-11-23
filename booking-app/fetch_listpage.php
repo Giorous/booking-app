@@ -1,9 +1,9 @@
 <?php
 
-$servername = "";
-$username = "";
-$password = "";
-$dbname = "";
+$servername = "localhost";
+$username = "username_default1";
+$password = "ZGPsEkJK2Tdup9yP";
+$dbname = "wda";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -82,8 +82,9 @@ if (!$conn) {
 					echo '<div class="alert alert-success"
 						role="alert">Error:'.$sql."<br>".mysqli_error($conn).'</div>';
 				}
-		?>
+		?>			
 					<p>Search Results</p>
+					<div class="spinner"></div>
 						<?php 
 							if ($result_bookingdate > 0){
 								echo "You have already book for this date";	

@@ -136,7 +136,6 @@
 									</div>
 								</div>
 							</article>
-							<div class="spinner"></div>
 							<?php
 								}
 							}
@@ -216,7 +215,6 @@
                     return false;
                 }
 				//console.log(form_data);
-				document.body.className="spinner";
 				$.ajax({
 					url:"fetch_listpage.php",
 					method: "POST",
@@ -224,46 +222,47 @@
 					dataType: "html",
 					success:function(d)
 					{
-						//console.log(d);
-						document.body.className="";
-						$('main').html(d);
+						$('main').html('<img class="spinner" alt="" src="ajax-loader.gif" width="100" height="100" margin="0" align="center" />');
+						setTimeout(function () {
+							$('main').html(d);
+								}, 2000);
 					}
+						//console.log(d);
 				});
 			});
 		});
 	</script>
 	<script>
-			  $( function() {
-				$( "#slider-range" ).slider({
-				  range: true,
-				  min: 0,
-				  max: 500,
-				  values: [ 0, 500],
-				  slide: function( event, ui ) {
-				  	$("#amount").val( "\u20ac" + ui.values[ 0 ] + " - \u20ac" + ui.values[ 1 ] );
-				  	$("#amount2").val(ui.values[ 0 ]);
-				  	$("#amount3").val(ui.values[ 1 ]);
-				  }
-				});
-				$( "#amount" ).val( "\u20ac" + $( "#slider-range" ).slider( "values", 0 ) +
-				  " - \u20ac" + $( "#slider-range" ).slider( "values", 1 ) );
-			  } );
+		$( function() {
+			$( "#slider-range" ).slider({
+				range: true,
+				min: 0,
+				max: 500,
+				values: [ 0, 500],
+				slide: function( event, ui ) {
+				$("#amount").val( "\u20ac" + ui.values[ 0 ] + " - \u20ac" + ui.values[ 1 ] );
+				$("#amount2").val(ui.values[ 0 ]);
+				$("#amount3").val(ui.values[ 1 ]);
+				}
+			});
+			$( "#amount" ).val( "\u20ac" + $( "#slider-range" ).slider( "values", 0 ) +
+				" - \u20ac" + $( "#slider-range" ).slider( "values", 1 ) );
+		} );
 	</script>
 	<script>
-				$(function() {
-		    var dates = $("#from, #to").datepicker({
-		        
-		        defaultDate: "+1w",
-		        minDate: 0,
-		        changeMonth: true,
-		        numberOfMonths: 1,
-		        onSelect: function(dateText, inst) {
-		            var option = this.id == "from" ? "minDate" : "maxDate",
-		                actualDate = new Date(dateText);
-		            var newDate = new Date(actualDate.getFullYear(), actualDate.getMonth(), actualDate.getDate() + 1);
-		            dates.not(this).datepicker("option", option, newDate);
-		        }
-		    });
+		$(function() {
+			var dates = $("#from, #to").datepicker({
+			defaultDate: "+1w",
+			minDate: 0,
+			changeMonth: true,
+			numberOfMonths: 1,
+			onSelect: function(dateText, inst) {
+				var option = this.id == "from" ? "minDate" : "maxDate",
+					actualDate = new Date(dateText);
+				var newDate = new Date(actualDate.getFullYear(), actualDate.getMonth(), actualDate.getDate() + 1);
+				dates.not(this).datepicker("option", option, newDate);
+				}
+			});
 		});
 	</script>
 </body>

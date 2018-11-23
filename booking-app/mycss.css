@@ -41,7 +41,10 @@ img.bg{
 	height: 100%;
 }
 
-
+.spinner{
+	margin: 0 auto;
+	display: block;
+}
 
 @media only screen and (max-width: 654px){
 	img.bgnone{
