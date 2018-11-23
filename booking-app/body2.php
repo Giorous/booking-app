@@ -222,10 +222,10 @@
 					dataType: "html",
 					success:function(d)
 					{
-						$('main').html('<img class="spinner" alt="" src="ajax-loader.gif" width="100" height="100" margin="0" align="center" />');
+						$('main').html('<img class="spinner" alt="loading" src="spinner.gif"/>');
 						setTimeout(function () {
 							$('main').html(d);
-								}, 2000);
+								}, 1000);
 					}
 						//console.log(d);
 				});

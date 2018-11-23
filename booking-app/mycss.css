@@ -42,7 +42,7 @@ img.bg{
 }
 
 .spinner{
-	margin: 0 auto;
+	margin: 40% auto;
 	display: block;
 }
 
@@ -60,8 +60,6 @@ img.bg{
 	}
 }
 
-
-  
 
 .flex-container1_1>div{
 	line-height:70px;
