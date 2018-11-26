@@ -252,7 +252,6 @@
 	<script>
 		$(function() {
 			var dates = $("#from, #to").datepicker({
-			defaultDate: "+1w",
 			minDate: 0,
 			changeMonth: true,
 			numberOfMonths: 1,
