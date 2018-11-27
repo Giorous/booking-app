@@ -76,12 +76,22 @@
 				var room= document.getElementById("soflow-color1").value;
 				var checkin= document.getElementById("from").value;
 				var checkout= document.getElementById("to").value;
+				var re= /^(0?[1-9]|1[0-2])[-|\/](0?[1-9]|1\d|2\d|3[01])[-|\/](19|20)\d{2}$/;
+				var checkinresult=re.test(checkin);
+				var checkoutresult=re.test(checkout);
 				if (city=="" || room=="" || checkin=="" || checkout==""){
 					result=false;
 					$.alert({
                         title: 'Alert!',
                         content: 'Please fill in all the fields!',
                     });
+				}else if (checkinresult==false || checkoutresult==false){
+					result=false;
+					$.alert({
+                        title: 'Alert!',
+                        content: 'Please enter a valid date!',
+					
+					});
 				}
 				return result;
             }
