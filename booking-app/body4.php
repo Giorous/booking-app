@@ -84,8 +84,9 @@
 						<?php 
 							$sql_favorite="SELECT * FROM favorites where user_id= ".$row2["user_id"]." AND room_id=".$Room_Id." ";
 							$result_favorite=mysqli_query($conn,$sql_favorite)->fetch_assoc();
+							
 							if ($result_favorite > 0){ ?>
-								<span id="favorite"><i class="fa fa-heart"></i></span>			
+								<span id="favorite" title="heart"><i class="fa fa-heart"></i></span>			
 								<?php }else{
 						?>
 						<form id="form5" method="POST" action="favorite_page.php" target="frame">
@@ -115,18 +116,33 @@
 					</div>
 					<div id="borderlines"></div>
 					<div id="parking">
-						<i class="fas fa-car"> <?php echo $row['parking'];?></i>
-						<p>PARKING</p>
+						<i class="fas fa-car"></i>
+						<?php if($row['parking']==0){?>
+						<p> NO PARKING</p>
+						<?php }else{?>
+							<p>PARKING</p>
+						<?php
+						}?>
 					</div>
 					<div id="borderlines"></div>
 					<div id="wifi">
-						<i class="fas fa-wifi"> <?php echo $row['wifi'];?></i>
-						<p>WIFI</p>
+						<i class="fas fa-wifi"></i>
+						<?php if($row['wifi']==0){?>
+						<p> NO WIFI</p>
+						<?php }else{?>
+							<p>WIFI</p>
+						<?php
+						}?>
 					</div>
 					<div id="borderlines"></div>
 					<div id="pet">
-						<p><?php echo $row['pet_friendly'];?></p>
-						<p>PET FRIENDLY</p>
+						<i class="fas fa-paw"></i>
+						<?php if($row['pet_friendly']==0){?>
+						<p> NO PET FRIENDLY</p>
+						<?php }else{?>
+							<p>PET FRIENDLY</p>
+						<?php
+						}?>
 					</div>
 				</div>
 				<div id="room-description">
@@ -173,6 +189,7 @@
 					<h3>Reviews</h3>
 					<?php
 						$i=0;
+
 						$sql4="SELECT  review_id,user_id,rate,description,date_created FROM reviews WHERE room_id='{$_POST['Room_Id']}'";
 						$result4=mysqli_query($conn,$sql4);
 						if(mysqli_query($conn,$sql4)){
@@ -258,9 +275,11 @@
 						<p><?php echo $row4['description'];?></p>
 					</div>
 					<?php	
-					}	
+					}
+					
 					}
 					?>
+
 				</div>
 				<div id="ratings-review">
 					<h3>Add a Review</h3>
@@ -291,6 +310,8 @@
 			<p>&copy; George Roussos 2018</p>
 		</footer>
 	</div>
+
+
 	<script>
 		$(document).ready(function () {
 			$('#form4').on('submit', function(event){
@@ -330,6 +351,7 @@
 			});
 		});
 	</script>
+
 	<script>
 		$("button").click(function(){
     		$(this).find("i").removeClass("far fa-heart").addClass("fa fa-heart");
@@ -385,11 +407,14 @@
 		    modal.style.display = "block";
 		}
 	} 
+	
+
 	// When the user clicks on <span> (x), close the modal
 	span.onclick = function() {
 	    modal.style.display = "none";
 	    window.location.reload();
 	}
+
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
 	    if (event.target == modal) {
