@@ -86,14 +86,14 @@
 							$result_favorite=mysqli_query($conn,$sql_favorite)->fetch_assoc();
 							
 							if ($result_favorite > 0){ ?>
-								<span id="favorite" title="heart"><i class="fa fa-heart"></i></span>			
+								<span id="favorite"><i class="fa fa-heart"></i></span>			
 								<?php }else{
 						?>
 						<form id="form5" method="POST" action="favorite_page.php" target="frame">
                         	<input type="hidden" name="roomid" value="<?php echo $Room_Id;?>">
                         	<input type="hidden" name="userid" value="<?php echo $row2["user_id"];?>">
                         	<input type="hidden" name="status" value="1">
-							<button type="submit" id="favorite_button" class="button_favorite"><i class="far fa-heart"></i></button>
+							<button type="submit" id="favorite_button" class="button_favorite" data-toggle="tooltip" data-placement="top" title="Put this room in your favorites"><i class="far fa-heart"></i></button>
 						</form>
 						<?php } ?>
 					</div>
@@ -311,7 +311,11 @@
 		</footer>
 	</div>
 
-
+	<script>						
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+	</script>
 	<script>
 		$(document).ready(function () {
 			$('#form4').on('submit', function(event){
