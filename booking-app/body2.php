@@ -97,7 +97,7 @@
 								while ($row = mysqli_fetch_assoc($result)) {
 							?>
 							<article id="describe">
-								<img src="<?php echo $row['photo'];?>">
+								<img src="<?php echo $row['photo'];?>" title="test">
 								<h4><?php echo $row['name'];?></h4>
 								<h6><?php echo $row['city'];?>, <?php echo $row['area'];?></h6>
 								<p><?php echo $row['short_description'];?></p>	
@@ -210,7 +210,13 @@
 				var re= /^(0?[1-9]|1[0-2])[-|\/](0?[1-9]|1\d|2\d|3[01])[-|\/](19|20)\d{2}$/;
 				var checkinresult=re.test($('#from').val());
 				var checkoutresult=re.test($('#to').val());
-                if($('#from').val()=='' || $('#to').val()=='' ){
+				if ($('#Room_Type2').val()=='' && $('#City2').val()=='' && $('#Count_of_Guests').val()=='' ){
+					$.alert({
+						title: 'Alert!',
+						content: 'Please choose at least one field!',
+					});
+					return false;
+                }else if($('#from').val()=='' || $('#to').val()=='' ){
                     $.alert({
                         title: 'Alert!',
                         content: 'Please choose Check-in and Check-out day!',
@@ -220,7 +226,6 @@
 					$.alert({
                         title: 'Alert!',
                         content: 'Please enter a valid date!',
-					
 					});
 					return false;
 				}
